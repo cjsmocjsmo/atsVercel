@@ -1,143 +1,181 @@
-<script context="module">
-  export async function load({ fetch }) {
-    const res = await fetch('https://api.spacex.land/graphql', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        query: `{
-            launchesPast(limit: 10) {
-                mission_name
-                launch_date_local
-                links {
-                    video_link
-                }
-            }
-        }`
-      })
-    });
-
-    if (res.ok) {
-      const { data } = await res.json();
-      return {
-        props: {
-          launches: data.launchesPast
-        }
-      };
-    }
-
-    return {
-      status: res.status,
-      error: new Error(`Error fetching GraphQL data`)
-    };
-  }
-</script>
-
+<!-- <div id="IFrame">
+	<iframe 
+		
+	  	width="990" 
+		height="560" 
+		src="https://www.youtube.com/embed/okVkEfmoTTA" 
+		title="YouTube video player" 
+		frameborder="0" 
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+		allowfullscreen>
+	</iframe>
+  </div> -->
 <script>
-  export let launches;
+	// import Swiper core and required modules
+	import { Navigation, Pagination, Scrollbar, A11y, Lazy } from 'swiper';
+
+	import { Swiper, SwiperSlide } from 'swiper/svelte';
+
+	// Import Swiper styles
+	import 'swiper/css';
+	import 'swiper/css/navigation';
+	import 'swiper/css/pagination';
+	import 'swiper/css/scrollbar';
+	// import './styles.css';
+	import pic1 from '$lib/images/pic1.jpg';
+	import pic2 from '$lib/images/pic2.jpg';
+	import pic3 from '$lib/images/pic3.jpg';
+	import pic4 from '$lib/images/pic4.jpg';
+	import pic5 from '$lib/images/pic5.jpg';
+	import pic6 from '$lib/images/pic6.jpg';
+	import pic7 from '$lib/images/pic7.jpg';
+	import pic8 from '$lib/images/pic8.jpg';
+	import pic9 from '$lib/images/pic9.jpg';
+	import pic10 from '$lib/images/pic10.jpg';
+
+
 </script>
 
-<h1>SpaceX Launches</h1>
-<p>
-  This is an example <a
-    class="link"
-    target="_blank"
-    rel="noopener"
-    href="https://svelte.dev">SvelteKit</a
-  >
-  application fetching GraphQL data from the public
-  <a
-    class="link"
-    target="_blank"
-    rel="noopener"
-    href="https://api.spacex.land/graphql">SpaceX API</a
-  >. View source on
-  <a
-    class="link"
-    target="_blank"
-    rel="noopener"
-    href="https://github.com/leerob/sveltekit-graphql">GitHub</a
-  >.
-</p>
-<ul>
-  {#each launches as launch}
-    <li>
-      <a
-        class="card-link"
-        target="_blank"
-        rel="noopener"
-        href={launch.links.video_link}
-      >
-        <h2>{launch.mission_name}</h2>
-        <p>{new Date(launch.launch_date_local).toLocaleString()}</p>
-      </a>
-    </li>
-  {/each}
-</ul>
-<footer>
-  <p>
-    Created with <a
-      class="link"
-      target="_blank"
-      rel="noopener"
-      href="https://svelte.dev">SvelteKit</a
-    >
-    and deployed with
-    <a class="link" target="_blank" rel="noopener" href="https://vercel.com"
-      >▲ Vercel</a
-    >.
-  </p>
-</footer>
+<h1>Alpha Tree Service</h1>
+<h2>360 516 8933</h2>
 
+<Swiper
+	modules={[Navigation, Pagination, Scrollbar, A11y]}
+	spaceBetween={10}
+	slidesPerView={3}
+	navigation
+	pagination={{ clickable: true }}
+	scrollbar={{ draggable: true }}
+	on:slideChange={() => console.log('slide change')}
+	on:swiper={(e) => console.log(e.detail[0])}
+>
+	<SwiperSlide><img src={pic1} alt="fuckit" /></SwiperSlide>
+	<SwiperSlide><img src={pic2} alt="fuckit" /></SwiperSlide>
+	<SwiperSlide><img src={pic3} alt="fuckit" /></SwiperSlide>
+	<SwiperSlide><img src={pic4} alt="fuckit" /></SwiperSlide>
+	<SwiperSlide><img src={pic5} alt="fuckit" /></SwiperSlide>
+	<SwiperSlide><img src={pic6} alt="fuckit" /></SwiperSlide>
+	<SwiperSlide><img src={pic7} alt="fuckit" /></SwiperSlide>
+	<SwiperSlide><img src={pic8} alt="fuckit" /></SwiperSlide>
+	<SwiperSlide><img src={pic9} alt="fuckit" /></SwiperSlide>
+	<SwiperSlide><img src={pic10} alt="fuckit" /></SwiperSlide>
+
+	...
+</Swiper>
+
+
+<div class="box1">
+
+<div id="IFrame">
+	<iframe 
+		
+	  	width="490" 
+		height="280" 
+		src="https://www.youtube.com/embed/okVkEfmoTTA" 
+		title="YouTube video player" 
+		frameborder="0" 
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+		allowfullscreen>
+	</iframe>
+  </div>
+
+  <p>I contacted Curtis about removing several, dangerous trees on my property. 
+	He showed up on time and ready to work. He did exactly what I expected him to do. 
+	He does exceptional work. I will continue to call Curtis when I need a tree removed. 
+	I would highly recommend Alphatree. Dan
+	do1058</p>
+
+  </div>
+
+  <div class="box2">
+  <p>Curtis and crew took down an 80’ fir near a fence and house. NO DAMAGE!!! 
+	Cleanup was thorough and they cut the rounds into 14” rounds for later splitting. 
+	Crew had a great attitude. Will use them again.
+	- Kurt R</p>
+
+  <div id="IFrame2">
+	<iframe 
+		width="490" 
+		height="280" 
+		src="https://www.youtube.com/embed/MAhLq6x6jOM" 
+		title="YouTube video player" 
+		frameborder="0" 
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+		allowfullscreen>
+	</iframe>
+  </div>
+</div>
+<!-- <script>
+  // Import Swiper Svelte components
+  import { Swiper, SwiperSlide } from 'swiper/svelte';
+
+  // Import Swiper styles
+  import 'swiper/css';
+</script>
+
+
+<Swiper
+    spaceBetween={20}
+    slidesPerView={3}
+	navigation
+    on:slideChange={() => console.log('slide change')}
+    on:swiper={(e) => console.log(e.detail[0])}
+  >
+    <SwiperSlide>Slide 1</SwiperSlide>
+    <SwiperSlide>Slide 2</SwiperSlide>
+    <SwiperSlide>Slide 3</SwiperSlide>
+    <SwiperSlide>Slide 4</SwiperSlide>
+    ...
+  </Swiper> -->
 <style>
-  :global(body) {
-    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
-      monospace;
-    background-color: #fafafa;
-    max-width: 650px;
-    margin: 32px auto;
-    padding: 0 16px;
-  }
-  h1 {
-    letter-spacing: -0.025em;
-  }
-  h2 {
-    font-size: 18px;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 32px;
-  }
-  li {
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    margin-bottom: 16px;
-    background-color: white;
-    transition: 0.15s box-shadow ease-in-out;
-  }
-  li:hover {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-  }
-  p {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.75;
-  }
-  a {
-    color: #0070f3;
-    text-decoration: none;
-  }
-  .card-link {
-    padding: 8px 24px;
-    display: block;
-  }
-  .link {
-    transition: 0.15s text-decoration ease-in-out;
-    color: #0761d1;
-  }
-  .link:hover {
-    text-decoration: underline;
-  }
+	h2 {
+		text-align: center;
+	}
+
+	#IFrame {
+		margin-top: 0.5em;
+	}
+
+	.box1 {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.box2 {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+
+
+
+	@media (max-width: 450px) {
+		iframe {
+			width: 370px;
+			height: 187px;
+		}
+
+		.box1, .box2 {
+			flex-direction: column;
+		}
+	}
+
+	/* .swiper {
+		width: 100%;
+		height: 100%;
+		}
+
+	.swiper-slide {
+		background-position: center;
+		background-size: cover;
+	}
+
+	.swiper-slide img {
+		display: block;
+		width: 100%;
+	} */
+
 </style>
