@@ -42,7 +42,7 @@
 <Swiper
 	modules={[Navigation, Pagination, Scrollbar, A11y]}
 	spaceBetween={10}
-	slidesPerView={3}
+	slidesPerView={2}
 	navigation
 	pagination={{ clickable: true }}
 	scrollbar={{ draggable: true }}
