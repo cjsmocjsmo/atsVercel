@@ -22,16 +22,16 @@
 	import 'swiper/css/pagination';
 	import 'swiper/css/scrollbar';
 	// import './styles.css';
-	import pic1 from '$lib/images/pic1.jpg';
-	import pic2 from '$lib/images/pic2.jpg';
-	import pic3 from '$lib/images/pic3.jpg';
-	import pic4 from '$lib/images/pic4.jpg';
-	import pic5 from '$lib/images/pic5.jpg';
-	import pic6 from '$lib/images/pic6.jpg';
-	import pic7 from '$lib/images/pic7.jpg';
-	import pic8 from '$lib/images/pic8.jpg';
-	import pic9 from '$lib/images/pic9.jpg';
-	import pic10 from '$lib/images/pic10.jpg';
+	import pic1 from '$lib/images/pic1.webp';
+	import pic2 from '$lib/images/pic2.webp';
+	import pic3 from '$lib/images/pic3.webp';
+	import pic4 from '$lib/images/pic4.webp';
+	import pic5 from '$lib/images/pic5.webp';
+	import pic6 from '$lib/images/pic6.webp';
+	import pic7 from '$lib/images/pic7.webp';
+	import pic8 from '$lib/images/pic8.webp';
+	import pic9 from '$lib/images/pic9.webp';
+	import pic10 from '$lib/images/pic10.webp';
 
 
 </script>
@@ -50,6 +50,8 @@
 	on:swiper={(e) => console.log(e.detail[0])}
 >
 	<SwiperSlide><img src={pic1} alt="fuckit" /></SwiperSlide>
+		
+		
 	<SwiperSlide><img src={pic2} alt="fuckit" /></SwiperSlide>
 	<SwiperSlide><img src={pic3} alt="fuckit" /></SwiperSlide>
 	<SwiperSlide><img src={pic4} alt="fuckit" /></SwiperSlide>

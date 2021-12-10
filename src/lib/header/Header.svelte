@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/fogo.png';
+	import logo from '$lib/images/logo/logotrans32.webp';
 </script>
 
 <header>
