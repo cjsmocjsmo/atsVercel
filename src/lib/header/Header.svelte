@@ -4,11 +4,11 @@
 </script>
 
 <header>
-	<!-- <div class="corner"> -->
-		<a href="https://kit.svelte.dev">
+	<div class="corner">
+		<!-- <a href="https://kit.svelte.dev">
 			<img src={logo} alt="SvelteKit" />
-		</a>
-	<!-- </div> -->
+		</a> -->
+	</div>
 
 	<nav>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -16,6 +16,7 @@
 		</svg>
 		<ul>
 			<li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
+			<li class:active={$page.path === '/main'}><a sveltekit:prefetch href="/main">Main</a></li>
 			<li class:active={$page.path === '/about'}><a sveltekit:prefetch href="/about">About</a></li>
 			<li class:active={$page.path === '/gallery'}><a sveltekit:prefetch href="/gallery">Gallery</a></li>
 			<li class:active={$page.path === '/comments'}><a sveltekit:prefetch href="/comments">Comments</a></li>
@@ -48,11 +49,11 @@
 		height: 100%;
 	} */
 
-	img {
+	/* img {
 		width: 3em;
 		height: 3em;
 		object-fit: contain;
-	}
+	} */
 
 	nav {
 		display: flex;
