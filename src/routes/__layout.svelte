@@ -47,7 +47,7 @@
       <span class="tooltiptext">Twitter</span>
     </div>
 
-    <div class="tooltip">
+    <!-- <div class="tooltip">
       <a href="tel:+13605168933">
         <svg
           id="phone"
@@ -65,9 +65,9 @@
         </svg>
       </a>
       <span class="tooltiptext">Call Me</span>
-    </div>
+    </div> -->
 
-    <div class="tooltip">
+    <!-- <div class="tooltip">
       <svg
         id="email"
         xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@
         />
       </svg>
       <span class="tooltiptext">Email</span>
-    </div>
+    </div> -->
 
     <div class="tooltip">
       <svg
@@ -101,7 +101,7 @@
       <span class="tooltiptext">Leave A Comment</span>
     </div>
 
-    <div class="tooltip">
+    <!-- <div class="tooltip">
       <svg
         id="images"
         xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +117,7 @@
         />
       </svg>
       <span class="tooltiptext">Gallary</span>
-    </div>
+    </div> -->
   </div>
 </footer>
 

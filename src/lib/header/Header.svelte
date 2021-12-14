@@ -1,6 +1,5 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/logo/logotrans32.webp';
 </script>
 
 <header>
@@ -19,6 +18,11 @@
 			<li class:active={$page.path === '/about'}><a sveltekit:prefetch href="/about">About</a></li>
 			<li class:active={$page.path === '/gallery'}><a sveltekit:prefetch href="/gallery">Gallery</a></li>
 			<li class:active={$page.path === '/comments'}><a sveltekit:prefetch href="/comments">Comments</a></li>
+
+			
+
+
+
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
