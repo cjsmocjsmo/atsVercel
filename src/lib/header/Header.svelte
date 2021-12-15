@@ -89,7 +89,7 @@
       </li>
 
 
-	  <!-- <li class:active={$page.path === '/comments'}><a sveltekit:prefetch href="/gallery/pic1zoom/20210114_141712_thumb.webp"></a></li> -->
+	  <li class:active={$page.path === '/comments'}><a sveltekit:prefetch href="/gallery/page1zoom/20201112_105838.svelte"></a></li>
 
 
     </ul>

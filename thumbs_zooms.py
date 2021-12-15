@@ -111,36 +111,25 @@ class GenerateThumbsAndZooms:
             print(p2)
             self.rotate_pic_page2(p2)
 
-    # def remove_rotated(self):
-    #     caroselglob = glob.glob(self.carosel_glob_path2)
-    #     page2glob = glob.glob(self.page2_glob_path2)
-    #     for car in caroselglob:
-    #         if re.search(self.search1, car) != None:
-    #             fn, ext = os.path.splitext(car)
-    #             fn2 = fn[:-6] + ext
-    #             print(fn2)
-    #         elif re.search(self.search2) != None:
-    #             fn = car[:-11] + "_thumb.webp"
-    #             print(fn)
-
-
-
-
     def galPage1_page_string(self, filename):
-        s1 = "<script> import p1 from '$lib/images/galPage1/{}'</script>".format(filename)
+        fn, _ = os.path.splitext(filename)
+        fnn = fn + ".webp"
+        s1 = "<script> import p1 from '$lib/images/galPage1/{}'</script>".format(fnn)
         s2 = """<img src={p1} alt='fuckti'/>"""
         s3 = """<style> img { border-radius: 10px; } </style>"""
         
         return s1, s2, s3
 
     def galPage2_page_string(self, filename):
-        s1 = "<script> import p2 from '$lib/images/galPage2/{}'</script>".format(filename)
+        fn, _ = os.path.splitext(filename)
+        fnn = fn + ".webp"
+        s1 = "<script> import p2 from '$lib/images/galPage2/{}'</script>".format(fnn)
         s2 = """<img src={p2} alt='fuckti'/>"""
         s3 = """<style> img { border-radius: 10px; } </style>"""
         return s1, s2, s3
 
     def create_galPage1_pages(self):
-        page1_glob_path = '/home/charliepi/atsVercel/src/lib/images/galPage1/*.webp'
+        page1_glob_path = '/home/charliepi/atsVercel/src/lib/images/galPage1/*.jpg'
         p1glob = glob.glob(page1_glob_path)
         for p1 in p1glob:
             _, fname = os.path.split(p1)
@@ -153,14 +142,18 @@ class GenerateThumbsAndZooms:
     def create_galPage2_pages(self):
         page2_glob_path = '/home/charliepi/atsVercel/src/lib/images/galPage2/*.webp'
         p2glob = glob.glob(page2_glob_path)
+        s1 = re.compile(r"thumb")
         for p2 in p2glob:
-            print(p2)
-            _, fname = os.path.split(p2)
-            page_content = self.galPage2_page_string(fname)
-            fname_noext, _ = os.path.splitext(fname)
-            newfilename =  '/home/charliepi/atsVercel/src/routes/gallery/page2zoom/' + fname_noext + ".svelte"
-            with open(newfilename, "w") as outfile:
-                outfile.writelines([page_content[0], "\n", page_content[1], "\n", page_content[2]])
+            if re.search(s1, p2) != None:
+                pass
+            else:
+                print(p2)
+                _, fname = os.path.split(p2)
+                page_content = self.galPage2_page_string(fname)
+                fname_noext, _ = os.path.splitext(fname)
+                newfilename =  '/home/charliepi/atsVercel/src/routes/gallery/page2zoom/' + fname_noext + ".svelte"
+                with open(newfilename, "w") as outfile:
+                    outfile.writelines([page_content[0], "\n", page_content[1], "\n", page_content[2]])
 
     def galPage1_thumbs(self):
         page1_glob_path = '/home/charliepi/atsVercel/src/lib/images/galPage1/*thumb.webp'
@@ -206,7 +199,7 @@ class GenerateThumbsAndZooms:
         for pic in pic2thumbList:
             p, _ = os.path.splitext(pic[1])
             g1 = "<div class='grid-item'><a href='"
-            g2 = "/gallery/pic1zoom/" + p[:-6] + ".svelte"
+            g2 = "/gallery/page1zoom/" + p[:-6]
             g3 = "'><img src={"
             g4 = pic[0]
             g5 = "} alt='fuckit' /></a></div>"
@@ -217,8 +210,7 @@ class GenerateThumbsAndZooms:
         for pic in pic1thumbList:
             p, _ = os.path.splitext(pic[1])
             g1 = "<div class='grid-item'><a href='"
-            print(p[:-6])
-            g2 = "/gallery/pic1zoom/" + p[:-6] + ".svelte"
+            g2 = "/gallery/page2zoom/" + p[:-6]
             g3 = "'><img src={"
             g4 = pic[0]
             g5 = "} alt='fuckit' /></a></div>"
@@ -235,12 +227,60 @@ class GenerateThumbsAndZooms:
         with open(newoutfile, "w") as ouf:
             ouf.writelines(stringList)
 
+    def pre_run_tasks(self):
+        caroselimagesglob = glob.glob("/home/charliepi/atsVercel/src/lib/images/caroselimages/*")
+        for car in caroselimagesglob:
+            _, ext = os.path.splitext(car)
+            if ext == ".webp" or ext == ".jpeg":
+                os.remove(car)
+
+        galPage1glob = glob.glob("/home/charliepi/atsVercel/src/lib/images/galPage1/*.webp")
+        for g in galPage1glob:
+            _, ext = os.path.splitext(g)
+            if ext == ".webp":
+                os.remove(g)
+
+        galPage2glob = glob.glob("/home/charliepi/atsVercel/src/lib/images/galPage2/*") 
+        for gal in galPage2glob:
+            _, ext = os.path.splitext(gal)
+            if ext == ".webp" or ext == ".jpeg":
+                os.remove(gal)
+
+        page1zoomglob = glob.glob("/home/charliepi/atsVercel/src/routes/gallery/page1zoom/*")
+        for page in page1zoomglob:
+            _, ext = os.path.splitext(page)
+            if ext == ".svelte":
+                os.remove(page)
+
+        page2zoomglob = glob.glob("/home/charliepi/atsVercel/src/routes/gallery/page2zoom/*")
+        for page1 in page2zoomglob:
+            _, ext = os.path.splitext(page1)
+            if ext == ".svelte":
+                os.remove(page1)
+        try:
+            os.remove("/home/charliepi/atsVercel/src/routes/gallery.svelte")
+        except FileNotFoundError:
+            pass
+
+    def post_run_tasks(self):
+        caroselimagesglob = glob.glob("/home/charliepi/atsVercel/src/lib/images/caroselimages/*.jpeg")
+        for car in caroselimagesglob:
+            os.remove(car)
+
+        galPage2glob = glob.glob("/home/charliepi/atsVercel/src/lib/images/galPage2/*.jpeg")
+        for gal in galPage2glob:
+            os.remove(gal)
+
+        
+
     def main(self):
+        self.pre_run_tasks()
         self.create_webp_images()
         self.create_webp()
-        # self.create_galPage1_pages()
-        # self.create_galPage2_pages()
-        # self.gallery_script()
+        self.create_galPage1_pages()
+        self.create_galPage2_pages()
+        self.gallery_script()
+        self.post_run_tasks()
 
 if __name__ == "__main__":
     RF = GenerateThumbsAndZooms()
