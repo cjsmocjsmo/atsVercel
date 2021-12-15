@@ -11,16 +11,16 @@
   import 'swiper/css/pagination';
   import 'swiper/css/scrollbar';
 
-  import pic1 from '$lib/images/page1/20200703_122208_rotated_thumb.webp';
-  import pic2 from '$lib/images/page1/20200703_122216_rotated_thumb.webp';
-  import pic3 from '$lib/images/page1/20200703_122218_rotated_thumb.webp';
-  import pic4 from '$lib/images/page1/20200703_122219_rotated_thumb.webp';
-  import pic5 from '$lib/images/page1/20200703_122220_rotated_thumb.webp';
-  import pic6 from '$lib/images/page1/20200703_122229_rotated_thumb.webp';
-  import pic7 from '$lib/images/page1/20210918_105104_rotated_thumb.webp';
-  import pic8 from '$lib/images/page1/20210918_105122_rotated_thumb.webp';
-  import pic9 from '$lib/images/page1/20210918_105132_rotated_thumb.webp';
-  import pic10 from '$lib/images/page1/20210918_112452_rotated_thumb.webp';
+  import pic1 from '$lib/images/caroselimages/20200703_122208_rotated_thumb.webp';
+  import pic2 from '$lib/images/caroselimages/20200703_122216_rotated_thumb.webp';
+  import pic3 from '$lib/images/caroselimages/20200703_122218_rotated_thumb.webp';
+  import pic4 from '$lib/images/caroselimages/20200703_122219_rotated_thumb.webp';
+  import pic5 from '$lib/images/caroselimages/20200703_122220_rotated_thumb.webp';
+  import pic6 from '$lib/images/caroselimages/20200703_122229_rotated_thumb.webp';
+  import pic7 from '$lib/images/caroselimages/20210918_105104_rotated_thumb.webp';
+  import pic8 from '$lib/images/caroselimages/20210918_105122_rotated_thumb.webp';
+  import pic9 from '$lib/images/caroselimages/20210918_105132_rotated_thumb.webp';
+  import pic10 from '$lib/images/caroselimages/20210918_112452_rotated_thumb.webp';
 
   
 
