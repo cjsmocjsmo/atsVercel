@@ -196,10 +196,10 @@ class GenerateThumbsAndZooms:
         stringList.append("<div class='grid-container'>")
         stringList.append("\n")
 
-        for pic in pic2thumbList:
+        for pic in pic1thumbList:
             p, _ = os.path.splitext(pic[1])
             g1 = "<div class='grid-item'><a href='"
-            g2 = "/gallery/page1zoom/" + p[:-6]
+            g2 = "/gallery/page2zoom/" + p[:-6]
             g3 = "'><img src={"
             g4 = pic[0]
             g5 = "} alt='fuckit' /></a></div>"
@@ -207,10 +207,10 @@ class GenerateThumbsAndZooms:
             stringList.append(gridItem)
             stringList.append("\n")
 
-        for pic in pic1thumbList:
+        for pic in pic2thumbList:
             p, _ = os.path.splitext(pic[1])
             g1 = "<div class='grid-item'><a href='"
-            g2 = "/gallery/page2zoom/" + p[:-6]
+            g2 = "/gallery/page1zoom/" + p[:-6]
             g3 = "'><img src={"
             g4 = pic[0]
             g5 = "} alt='fuckit' /></a></div>"

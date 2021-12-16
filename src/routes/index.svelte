@@ -3,6 +3,7 @@
   import { Navigation, Pagination, Scrollbar, A11y, Lazy } from 'swiper';
 
   import { Swiper, SwiperSlide } from 'swiper/svelte';
+  import Randomcommentcomp from '$lib/comps/randomcommentcomp.svelte';
 
   import 'swiper/css';
   import 'swiper/css/navigation';
@@ -20,6 +21,22 @@
   import pic9 from '$lib/images/caroselimages/20210918_105132_thumb.webp';
   import pic10 from '$lib/images/caroselimages/20210918_112452_thumb.webp';
 
+  const c1 =
+    'I contacted Curtis about removing several, dangerous trees on my property.';
+  const c2 =
+    '  He showed up on time and ready to work. He did exactly what I expected him';
+  const c3 =
+    ' to do. He does exceptional work. I will continue to call Curtis when I need';
+  const c4 = ' a tree removed. I would highly recommend Alphatree. Dan do1058';
+  const content = c1 + c2 + c3 + c4;
+
+  const s1 =
+    'Curtis and crew took down an 80’ fir near a fence and house. NO DAMAGE!!!';
+  const s2 =
+    '  Cleanup was thorough and they cut the rounds into 14” rounds for later';
+  const s3 =
+    ' splitting. Crew had a great attitude. Will use them again. - Kurt R';
+  const content2 = s1 + s2 + s3;
 </script>
 
 <h1>360 516 8933</h1>
@@ -59,22 +76,11 @@
       allowfullscreen
     />
   </div>
-
-  <p style="font-style: italic; font-size: 1.15em;">
-    I contacted Curtis about removing several, dangerous trees on my property.
-    He showed up on time and ready to work. He did exactly what I expected him
-    to do. He does exceptional work. I will continue to call Curtis when I need
-    a tree removed. I would highly recommend Alphatree. Dan do1058
-  </p>
+  <Randomcommentcomp {content} />
 </div>
-<h1>360 516 8933</h1>
-<div class="box2">
-  <p style="font-style: italic; font-size: 1.15em;">
-    Curtis and crew took down an 80’ fir near a fence and house. NO DAMAGE!!!
-    Cleanup was thorough and they cut the rounds into 14” rounds for later
-    splitting. Crew had a great attitude. Will use them again. - Kurt R
-  </p>
 
+<div class="box2">
+  <Randomcommentcomp content={content2} />
   <div id="IFrame2">
     <iframe
       width="490"
@@ -89,9 +95,6 @@
 </div>
 
 <style>
-	p {
-		padding: 2em;
-	}
   #IFrame {
     margin-top: 0.5em;
   }
@@ -119,6 +122,13 @@
     .box1,
     .box2 {
       flex-direction: column;
+    }
+  }
+
+  @media (max-width: 365px) {
+    iframe {
+      width: 310px;
+      height: 175px;
     }
   }
 </style>
