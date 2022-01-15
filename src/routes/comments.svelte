@@ -1,6 +1,8 @@
 <script>
   import TextComp from '$lib/comps/textcomp.svelte';
   import CommentComp from '$lib/comps/commentcomp.svelte';
+  import { fade } from 'svelte/transition';
+
   let show = true;
   let show2 = false;
 
@@ -63,15 +65,18 @@
 </div>
 
 {#if show}
-  <TextComp />
+<div transition:fade ><TextComp /></div>
+  
 {:else}
-  <div />
+  <div transition:fade />
 {/if}
 
 {#if show2}
-  <CommentComp />
+
+<div transition:fade ><CommentComp /></div>
+  
 {:else}
-  <div />
+  <div transition:fade />
 {/if}
 
 <style>
