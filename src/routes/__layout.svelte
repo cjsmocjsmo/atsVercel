@@ -1,11 +1,11 @@
 <script>
-  import Header from '$lib/header/Header.svelte';
+  // import Header from '$lib/header/Header.svelte';
   import '../app.css';
 
 </script>
 
-<h1>above nav bar</h1>
-<Header />
+<!-- <h1>above nav bar</h1> -->
+<!-- <Header /> -->
 
 <main>
   <slot />
@@ -13,7 +13,6 @@
 
 <footer>
   <h1>360 516 8933</h1>
-  <h1>did it work</h1>
 </footer>
 
 <style>
