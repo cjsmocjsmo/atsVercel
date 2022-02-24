@@ -1,11 +1,7 @@
 <script>
-  // import Header from '$lib/header/Header.svelte';
   import '../app.css';
 
 </script>
-
-<!-- <h1>above nav bar</h1> -->
-<!-- <Header /> -->
 
 <main>
   <slot />
