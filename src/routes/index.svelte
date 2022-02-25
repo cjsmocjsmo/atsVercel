@@ -78,6 +78,7 @@ import pic76thumb from '$lib/images/galPage1/20201121_154747_thumb.webp';
 import pic77thumb from '$lib/images/galPage1/20201121_141608_thumb.webp';
 </script>
 <div>
+    <!-- removed alphatree -->
     <a href="http://alphatree.services">
         <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="white" class="bi bi-arrow-left" viewBox="0 0 32 32">
             <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
